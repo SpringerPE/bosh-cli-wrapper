@@ -1,0 +1,50 @@
+azs:
+- name: z1
+  cloud_properties:
+    datacenters:
+    - clusters:
+      - Vsphere_cluster: {}
+
+disk_types:
+- disk_size: 10240
+  name: 10240
+- disk_size: 5120
+  name: 5120
+
+networks:
+- name: kubo
+  type: manual
+  subnets:
+  - range: 192.168.1.0/20
+    gateway: 192.168.1.1
+    az: z1
+    dns:
+      - 8.8.8.8
+    reserved:
+      - 192.168.1.0 - 192.168.1.10
+    cloud_properties:
+      name: devqa-503
+
+vm_types:
+- name: common
+  cloud_properties:
+    cpu: 1
+    disk: 20480
+    ram: 4096
+- name: master
+  cloud_properties:
+    cpu: 1
+    disk: 20480
+    ram: 4096
+- name: worker
+  cloud_properties:
+    cpu: 4
+    disk: 50000
+    ram: 4096
+
+compilation:
+  vm_type: common
+  workers: 4
+  az: z1
+  network: kubo
+  reuse_compilation_vms: true

@@ -1,0 +1,18 @@
+---
+# Configure vm size
+- type: replace
+  path: /resource_pools/name=vms/cloud_properties?
+  value:
+    cpu: 2
+    ram: 4_096
+    disk: 64_000
+
+# Configure disk size
+- type: replace
+  path: /disk_pools/name=disks/cloud_properties?
+  value:
+    disk_size: 32_768
+
+# Properties are taken from the default settings of the cpi
+
+

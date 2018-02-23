@@ -1,0 +1,23 @@
+### Concourse Settings
+director_name: bootstrap-jumpbox
+
+internal_ip: 10.230.0.32
+internal_cidr: 10.230.0.0/24
+internal_gw: 10.230.0.1
+reserved_ips: # List of Reserved IPs from the CIDR of the subnet
+network_name: "Admin-500"
+internal_dns1: "8.8.8.8"
+internal_dns2: "8.8.4.4"
+
+# CPI settings
+iaas: vsphere
+vcenter_dc: DC
+vcenter_vms: Bootstrap_Jumpbox/Director_VMs
+vcenter_templates: Bootstrap_Jumpbox/Director_Templates
+vcenter_disks: bootstrap_jumpbox_disks
+vcenter_ds: test-*
+vcenter_persistent_ds: test-*
+vcenter_cluster: Cluster1
+
+### Concourse version can be defined here or in a operations file
+

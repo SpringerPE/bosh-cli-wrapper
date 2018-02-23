@@ -1,0 +1,25 @@
+### Concourse Settings
+director_name: bootstrap-concourse
+
+ip: &ip 10.230.0.32
+public_ip: *ip
+internal_ip: *ip
+internal_cidr: 10.230.0.0/24
+internal_gw: 10.230.0.1
+network_name: "Admin-500"
+internal_dns1: "8.8.8.8"
+internal_dns2: "8.8.4.4"
+
+# CPI settings
+iaas: vsphere
+vcenter_dc: DC
+vcenter_vms: Bootstrap_Concourse/Director_VMs
+vcenter_templates: Bootstrap_Concourse/Director_Templates
+vcenter_disks: bootstrap_concourse_disks
+vcenter_ds: test-*
+vcenter_persistent_ds: test-*
+vcenter_cluster: Cluster1
+
+### Concourse version can be defined here or in vars file
+
+

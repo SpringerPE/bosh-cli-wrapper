@@ -1,0 +1,16 @@
+---
+- type: replace
+  path: /instance_groups/name=bosh/properties/vcenter?
+  value:
+    address: ((vcenter_ip))
+    user: ((vcenter_user))
+    password: ((vcenter_password))
+    datacenters:
+    - name: ((vcenter_deployments_dc))
+      vm_folder: ((vcenter_deployments_vms))
+      template_folder: ((vcenter_deployments_templates))
+      datastore_pattern: ((vcenter_deployments_ds))
+      persistent_datastore_pattern: ((vcenter_deployments_persistent_ds))
+      disk_path: ((vcenter_deployments_disks))
+      clusters: ((vcenter_deployments_clusters))
+

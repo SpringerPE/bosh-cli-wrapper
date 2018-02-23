@@ -1,0 +1,33 @@
+---
+- type: replace
+  path: /releases/-
+  value:
+    name: bosh-vsphere-cpi
+    version: 42
+    url: https://bosh.io/d/github.com/cloudfoundry-incubator/bosh-vsphere-cpi-release?v=42
+    sha1: 924e13a70f6ee26b388ced696080e4f020fdf84f
+
+# Add CPI
+- type: replace
+  path: /cloud_provider/template?
+  value:
+    name: vsphere_cpi
+    release: bosh-vsphere-cpi
+
+# Cloud properties
+- type: replace
+  path: /cloud_provider/properties/vcenter?
+  value:
+    address: ((vcenter_ip))
+    user: ((vcenter_user))
+    password: ((vcenter_password))
+    datacenters:
+    - name: ((vcenter_dc))
+      vm_folder: ((vcenter_vms))
+      template_folder: ((vcenter_templates))
+      datastore_pattern: ((vcenter_ds))
+      persistent_datastore_pattern: ((vcenter_persistent_ds))
+      disk_path: ((vcenter_disks))
+      clusters:
+      - ((vcenter_cluster)): {}
+

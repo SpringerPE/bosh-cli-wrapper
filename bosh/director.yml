@@ -1,0 +1,30 @@
+### BOSH Settings
+
+director_name: Test
+iaas: vsphere
+
+internal_ip: 10.230.0.33
+internal_cidr: 10.230.0.0/24
+internal_gw: 10.230.0.1
+dns_recursor_ip: 8.8.8.8
+reserved_ips: # List of Reserved IPs from the CIDR of the subnet
+network_name: "Admin-500"
+
+# Bosh Director settings
+vcenter_dc: DC
+vcenter_vms: Kubo_Test/Director_VMs
+vcenter_templates: Kubo_Test/Director_Templates
+vcenter_disks: bosh_test_kubo_disks
+vcenter_ds: test-*
+vcenter_persistent_ds: data_gold_*
+vcenter_cluster: Cluster1
+vcenter_rp: Bosh-Test
+
+# Deployments settings
+vcenter_deployments_dc: DC
+vcenter_deployments_vms: Kubo_Test/Bosh_VMs
+vcenter_deployments_templates: Kubo_Test/Bosh_Templates
+vcenter_deployments_ds: test-*
+vcenter_deployments_persistent_ds: data_gold_*
+vcenter_deployments_disks: bosh_test_kubo_disks
+vcenter_deployments_clusters: [ Cluster2: {}]

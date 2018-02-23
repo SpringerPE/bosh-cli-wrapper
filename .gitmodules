@@ -1,0 +1,9 @@
+[submodule "bosh/bosh-deployment"]
+	path = bosh/bosh-deployment
+	url = https://github.com/cloudfoundry/bosh-deployment.git
+[submodule "concourse/concourse-deployment"]
+	path = concourse/concourse-deployment
+	url = https://github.com/concourse/concourse-deployment.git
+[submodule "jumpbox/jumpbox-deployment"]
+	path = jumpbox/jumpbox-deployment
+	url = https://github.com/cppforlife/jumpbox-deployment

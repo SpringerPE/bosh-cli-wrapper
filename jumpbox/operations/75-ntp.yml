@@ -1,0 +1,6 @@
+---
+# Configure ntp
+- type: replace
+  path: /cloud_provider/properties/ntp?
+  value: [0.pool.ntp.org, 1.pool.ntp.org]
+

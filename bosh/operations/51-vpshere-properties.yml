@@ -1,0 +1,16 @@
+---
+- type: replace
+  path: /cloud_provider/properties/vcenter?
+  value:
+    address: ((vcenter_ip))
+    user: ((vcenter_user))
+    password: ((vcenter_password))
+    datacenters:
+    - name: ((vcenter_dc))
+      vm_folder: ((vcenter_vms))
+      template_folder: ((vcenter_templates))
+      datastore_pattern: ((vcenter_ds))
+      persistent_datastore_pattern: ((vcenter_persistent_ds))
+      disk_path: ((vcenter_disks))
+      clusters:
+      - ((vcenter_cluster)): {}
