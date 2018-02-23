@@ -42,11 +42,12 @@ Features:
 4. The previous seetings can be managed/changed by defining environment variables. See the script.
 
 5. If the script deploys a Bosh Director you can make use of Bosh specific arguments:
-   a. It can apply runtime-config defined in `runtime-config` folder (interpolating operations files, if there are more than one) after
+
+   * It can apply runtime-config defined in `runtime-config` folder (interpolating operations files, if there are more than one) after
       deploying a bosh-director (arg `bosh-init`).
-   b. Manage cloud-config by interpolating all files in `cloud-config` folder.
-   c. Talk with `credhub` to read secrets and certificates and make them availabe as environemnt variables by sourcing the script.
-   d. Show with `bosh-env` arg how to get the env variables from `credhub` and `secrets` to define as environment variables.
+   * Manage cloud-config by interpolating all files in `cloud-config` folder.
+   * Talk with `credhub` to read secrets and certificates and make them availabe as environemnt variables by sourcing the script.
+   * Show with `bosh-env` arg how to get the env variables from `credhub` and `secrets` to define as environment variables.
 
 6. The upstream deployments repos are included as submodules inside each folder which makes easy the usage of links, specially to
    link the base files and other common operations files. It is also usefull to track upstream versions.
